@@ -7,7 +7,7 @@ const router = require('./router');
 
 const app = new Koa()
 
-var sequelize = require('./db/models').sequelize;
+var { sequelize } = require('./db/models');
 sequelize.sync();
 
 // Real ip get
@@ -27,6 +27,12 @@ app.use(session({
 
 app.use(logger())
 app.use(koaBody())
+
+const swagger = require('swagger-injector');
+app.use(swagger.koa({
+  path: './src/swagger.json',
+  route: '/swagger'
+}));
 
 // router
 const _router = router(router);

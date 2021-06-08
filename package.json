@@ -23,7 +23,8 @@
     "koa-session": "^6.2.0",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "swagger-injector": "^4.0.1"
   },
   "devDependencies": {
     "babel-loader": "^8.2.2",
